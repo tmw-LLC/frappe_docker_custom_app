@@ -2,7 +2,7 @@ version: "3"
 
 services:
   backend:
-    image: erpnext:v15.11.0-addons
+    image: dakos/erpnext_hrms:v15.11.1
     deploy:
       restart_policy:
         condition: on-failure
@@ -11,7 +11,7 @@ services:
       - logs:/home/frappe/frappe-bench/logs
 
   configurator:
-    image: erpnext:v15.11.0-addons
+    image: dakos/erpnext_hrms:v15.11.1
     deploy:
       restart_policy:
         condition: none
@@ -39,7 +39,7 @@ services:
       - logs:/home/frappe/frappe-bench/logs
 
   create-site:
-    image: erpnext:v15.11.0-addons
+    image: dakos/erpnext_hrms:v15.11.1
     deploy:
       restart_policy:
         condition: none
@@ -89,7 +89,7 @@ services:
       - db-data:/var/lib/mysql
 
   frontend:
-    image: erpnext:v15.11.0-addons
+    image: dakos/erpnext_hrms:v15.11.1
     depends_on:
       - websocket
     deploy:
@@ -113,7 +113,7 @@ services:
       - "8080:8080"
 
   queue-long:
-    image: erpnext:v15.11.0-addons
+    image: dakos/erpnext_hrms:v15.11.1
     deploy:
       restart_policy:
         condition: on-failure
@@ -127,7 +127,7 @@ services:
       - logs:/home/frappe/frappe-bench/logs
 
   queue-short:
-    image: erpnext:v15.11.0-addons
+    image: dakos/erpnext_hrms:v15.11.1
     deploy:
       restart_policy:
         condition: on-failure
@@ -157,7 +157,7 @@ services:
       - redis-cache-data:/data
 
   scheduler:
-    image: erpnext:v15.11.0-addons
+    image: dakos/erpnext_hrms:v15.11.1
     deploy:
       restart_policy:
         condition: on-failure
@@ -169,7 +169,7 @@ services:
       - logs:/home/frappe/frappe-bench/logs
 
   websocket:
-    image: erpnext:v15.11.0-addons
+    image: dakos/erpnext_hrms:v15.11.1
     deploy:
       restart_policy:
         condition: on-failure
